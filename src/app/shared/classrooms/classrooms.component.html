@@ -1,0 +1,36 @@
+<p-dialog (onHide)="closeDialog()" [(visible)]="display" [focusOnShow]="false" [modal]="true" 
+        [style]="{width: '40rem'}" header="Classrooms" showEffect="fade">
+    <button pButton type="button" label="Add Class" (click)="openClassroomDialog()" *ngIf="mode=='admin'"
+            class="ui-button-success rounded-btn create-btn"></button>
+    <p-table [columns]="cols" [value]="classrooms">
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th *ngFor="let col of columns" [style.width]="col.width" class="col-header">
+                    {{col.header}}
+                </th>
+                <th [style.width]="'20%'" class="col-header">
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr [ngClass]="{'closed-class': rowData.status=='CLOSED', 'registered-class': isRegistered(rowData)}">
+                <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                </td>
+                <td style="text-align: center">
+                    <ng-container *ngTemplateOutlet="actionTemplate ? actionTemplate : defaultActionTemplate;
+                                                    context: {$implicit:rowData, registered: isRegistered(rowData)}">
+                    </ng-container>
+                    <ng-template #defaultActionTemplate></ng-template>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage" let-columns>
+            <tr>
+                <td [attr.colspan]="columns.length+1" style="text-align: center">
+                    No records found
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</p-dialog>

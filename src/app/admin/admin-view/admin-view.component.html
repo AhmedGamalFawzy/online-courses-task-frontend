@@ -1,0 +1,13 @@
+<courses [mode]="'admin'" [courses]="courses" (course-select)="onCourseSelection($event)"></courses>
+
+<classrooms [(display)]="displayClassrooms" [classrooms]="selectedCourse?.classrooms"
+            [actionTemplate]="action" [mode]="'admin'" (classroom-dialog)="displayClassroomDialog = true">
+    <ng-template #action let-rowData>
+        <button pButton type="button" label="Close" *ngIf="rowData.status=='OPEN'" class="rounded-btn ui-button-danger" 
+                (click)="closeClassroom(rowData)"></button>
+    </ng-template>
+</classrooms>
+
+<classroom-dialog [(display)]="displayClassroomDialog" [course]="selectedCourse" 
+                  (submit)="createClass($event)">
+</classroom-dialog>

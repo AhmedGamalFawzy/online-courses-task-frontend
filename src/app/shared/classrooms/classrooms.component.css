@@ -1,0 +1,18 @@
+.closed-class {
+    background-color: #f9717d !important;
+    color: #ffffff !important;
+}
+
+.registered-class {
+    background-color: #30c16c !important;
+    color: #ffffff !important;
+}
+
+:host ::ng-deep .create-btn {
+    margin: 0.5rem 0 1rem 0.2rem;
+}
+
+:host ::ng-deep .ui-table .ui-table-thead > tr > th.col-header {
+    background-color: #1976d2;
+    color: white;
+}

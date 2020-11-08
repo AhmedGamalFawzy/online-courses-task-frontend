@@ -1,1 +1,101 @@
-/* You can add global styles to this file, and also import other style files */
+/******************************* INPUT SWITCH ************************************/
+body .ui-inputswitch .ui-inputswitch-slider {
+    background-color: #c3d5e2;
+}
+
+body .ui-inputswitch.ui-inputswitch-checked .ui-inputswitch-slider {
+    background-color: #c3d5e2;
+}
+
+body .ui-inputswitch:not(.ui-state-disabled):hover .ui-inputswitch-slider {
+    background-color: #c3d5e2;
+}
+
+body .ui-inputswitch.ui-inputswitch-checked:not(.ui-state-disabled):hover .ui-inputswitch-slider {
+    background-color: #c3d5e2;
+}
+
+body .ui-inputswitch.ui-inputswitch-checked.ui-inputswitch-focus .ui-inputswitch-slider {
+    background-color: #c3d5e2;
+}
+
+body .ui-inputswitch.ui-inputswitch-focus .ui-inputswitch-slider {
+    box-shadow: none;
+    background-color: #c3d5e2;
+}
+
+body .ui-inputswitch {
+    font-size: small;
+}
+
+body .ui-inputswitch .ui-inputswitch-slider {
+    font-size: small;
+}
+
+/******************************* DROPDOWN ************************************/
+.student-dropdown.ui-dropdown {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #fff;
+    border-radius: 0;
+}
+
+.student-dropdown.ui-dropdown .ui-dropdown-label, 
+.student-dropdown.ui-dropdown .ui-dropdown-trigger {
+    background-color: transparent;
+    color: #fff;
+}
+
+.student-dropdown.ui-dropdown:not(.ui-state-disabled).ui-state-focus {
+    box-shadow: none;
+    border-color: #ffffff;
+}
+
+/******************************* BUTTON ************************************/
+.rounded-btn.ui-button {
+    border-radius: 6px;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.15);
+}
+
+/******************************* TOAST ************************************/
+.ui-toast .ui-toast-message-text-content {
+    padding-right: 1rem;
+}
+
+.ui-toast-bottom-right {
+    min-inline-size: fit-content;
+}
+
+.ui-toast .ui-toast-message {
+    border-radius: 5px;
+    color: #fff !important;
+}
+
+.ui-toast .ui-toast-message .ui-toast-close-icon {
+    color: #fff !important;
+}
+
+.ui-toast .ui-toast-icon {
+    font-size: 1.5rem;
+    margin-top: 4%;
+}
+
+.ui-toast .ui-toast-close-icon {
+    font-size: inherit;
+    top: 0.45rem;
+    right: 0.45rem;
+}
+
+body .ui-toast .ui-toast-message.ui-toast-message-success {
+    background-color: #34A835;
+}
+
+body .ui-toast .ui-toast-message.ui-toast-message-error {
+    background-color: #ff3547;
+    width: 200%;
+    left: -22%;
+}
+
+body .ui-toast .ui-toast-message.ui-toast-message-info {
+  background-color: #116fbf;
+}

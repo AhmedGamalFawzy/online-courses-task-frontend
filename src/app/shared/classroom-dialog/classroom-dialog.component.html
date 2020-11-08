@@ -1,0 +1,28 @@
+<p-dialog (onHide)="closeDialog()" [(visible)]="display" [focusOnShow]="false" [modal]="true" 
+          [style]="{width: '25em'}" header="Classroom" showEffect="fade">
+  <form (ngSubmit)="onSubmit(classForm.value, $event)" [formGroup]="classForm" id="ngForm">
+    <div class="ui-fluid">
+      <div class="p-field margin-top-2">
+        <span class="ui-float-label dialog-input">
+          <input type="text" pInputText formControlName="course" id="course" readonly/>
+          <label for="course">Course</label>
+        </span>
+      </div>
+      <div class="p-field margin-top-2">
+        <span class="ui-float-label dialog-input">
+          <p-dropdown [options]="teachers" appendTo="body" formControlName="teacher" id="teacher" name="teacher"
+            placeholder=" "></p-dropdown>
+          <label for="teacher">Teacher</label>
+        </span>
+      </div>
+    </div>
+  </form>
+
+  <p-footer>
+    <div class="ui-dialog-buttonpane ui-helper-clearfix">
+      <button [disabled]="!classForm.valid" class="ui-button-success rounded-btn" form="ngForm" icon="pi pi-save" label="Create"
+        pButton type="submit"></button>
+      <button (click)="display=false" class="cancel-button rounded-btn" label="Cancel" pButton type="button"></button>
+    </div>
+  </p-footer>
+</p-dialog>

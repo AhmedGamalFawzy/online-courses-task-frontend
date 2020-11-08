@@ -1,0 +1,11 @@
+<courses [mode]="'edu'" [student]="currentStudent" [courses]="courses" 
+        (course-select)="onCourseSelection($event)"></courses>
+
+<classrooms [(display)]="displayClassrooms" [mode]="'edu'" [classrooms]="selectedCourse?.classrooms"
+            [student]="currentStudent" [actionTemplate]="action">
+    <ng-template #action let-rowData let-registered="registered">
+        <button pButton type="button" label="Register" *ngIf="!registered && rowData.status=='OPEN'" 
+                class="rounded-btn" (click)="register(rowData)"></button>
+        <span *ngIf="registered" style="font-weight: 500">Registered</span>
+    </ng-template>
+</classrooms>

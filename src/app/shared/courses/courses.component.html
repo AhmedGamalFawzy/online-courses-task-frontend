@@ -1,0 +1,35 @@
+<p-dataView #dv [value]="courses" [paginator]="true" [rows]="10" filterBy="name" [sortField]="sortField" 
+            [sortOrder]="sortOrder">
+    <p-header>
+        <div class="p-grid p-nogutter p-align-center">
+            <div class="p-col-6 p-md-2">
+                <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By" (onChange)="onSortChange($event)" [style]="{'min-width':'140px'}"></p-dropdown>
+            </div>
+            <div class="p-col-6 p-md-2 p-offset-8">
+                <input style="width: 100%;" type="search" pInputText placeholder="Search by name" (input)="dv.filter($event.target.value)">
+            </div>
+        </div>
+    </p-header>
+    <ng-template let-course pTemplate="listItem">
+        <div class="p-grid p-align-center p-nogutter course">
+            <div class="p-col-1 center-text">
+                <img width="100" src="assets/img/courses/{{course.name}}.png">
+            </div>
+            <div class="p-col-7">
+                <div class="p-grid">
+                    <div class="p-col-12 course-text"><span>{{course.name}}</span></div>
+                    <div class="p-col-12 course-text">
+                        <span [ngClass]="{'open':course.status=='OPEN','closed':course.status=='CLOSED'}">{{course.status}}</span>
+                    </div>
+                    <div class="p-col-12 course-text" style="color: #858585;">
+                        <span>{{course.classrooms.length}} classrooms</span>
+                    </div>
+                </div>
+            </div>
+            <div class="p-col-2 p-offset-2 center-text p-justify-end actions">
+                <button pButton type="button" label="Classrooms" class="rounded-btn" 
+                        [disabled]="mode=='edu' && !student" (click)="onCourseSelection($event, course)"></button>
+            </div>
+        </div>
+    </ng-template>
+</p-dataView>

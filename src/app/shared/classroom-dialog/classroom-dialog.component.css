@@ -1,0 +1,11 @@
+.dialog-input {
+    margin: 0.5rem 0.4rem 0 0.4rem;
+}
+
+.margin-top-2 {
+    margin-top: 2rem;
+}
+
+::ng-deep .ui-fluid .ui-dropdown {
+    min-height: 2rem;
+}

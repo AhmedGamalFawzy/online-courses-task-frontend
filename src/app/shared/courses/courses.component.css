@@ -1,0 +1,40 @@
+.course {
+    width: 100%;
+    padding: 1.5rem;
+    border-bottom: 1px solid #d9dad9;
+}
+
+.course-text {
+    margin-left: 3rem;
+    font-weight: 600;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.open {
+    background-color: #34A835;
+    color: #fff;
+    width: fit-content;
+    padding: 0.05rem 0.5rem;
+    border-radius: 10px;
+}
+
+.closed {
+    background-color: #ff3547;
+    color: #fff;
+    width: fit-content;
+    padding: 0.05rem 0.5rem;
+    border-radius: 10px;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+:host ::ng-deep .actions button {
+    margin-left: 1rem;
+    /* border-radius: 6px !important; */
+}
